@@ -30,29 +30,27 @@ class CartScreen extends StatelessWidget {
         ) =>
             ListView.separated(
           padding: const EdgeInsets.all(16),
-          itemBuilder: (context, index) => Container(
-            child: Row(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(value.productsInCart[index].name),
-                const SizedBox(width: 8),
-                Text('\$${value.productsInCart[index].price}'),
-                Text('(Jum: ${value.productsInCart[index].amount})'),
-                const Spacer(),
-                ElevatedButton(
-                  onPressed: () {
-                    value.addToCart(index);
-                  },
-                  child: Row(
-                    children: const <Widget>[
-                      Text('Remove From '),
-                      Icon(Icons.shopping_cart_rounded),
-                      // TODO: klo udah ada di keranjang jadi tombol - jumlah +
-                    ],
-                  ),
+          itemBuilder: (context, index) => Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(value.productsInCart[index].name),
+              const SizedBox(width: 8),
+              Text('\$${value.productsInCart[index].price}'),
+              Text('(Jum: ${value.productsInCart[index].amount})'),
+              const Spacer(),
+              ElevatedButton(
+                onPressed: () {
+                  value.addToCart(index);
+                },
+                child: Row(
+                  children: const <Widget>[
+                    Text('Remove From '),
+                    Icon(Icons.shopping_cart_rounded),
+                    // TODO: klo udah ada di keranjang jadi tombol - jumlah +
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           separatorBuilder: (context, index) => Divider(),
           itemCount: value.productsInCart.length,

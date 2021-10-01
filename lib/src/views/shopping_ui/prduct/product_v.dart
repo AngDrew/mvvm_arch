@@ -8,6 +8,8 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // context.read<ShoppingViewModel>()
+    // context.watch<ShoppingViewModel>()
     return Scaffold(
       appBar: AppBar(
         title: Text('Products'),

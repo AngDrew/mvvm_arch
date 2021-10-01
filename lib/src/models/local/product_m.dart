@@ -58,3 +58,5 @@ class ProductModel {
   @override
   int get hashCode => name.hashCode ^ price.hashCode ^ amount.hashCode;
 }
+// print(ProductModel);//no toString = instance of product model
+// print(ProductModel);//with tooString = menyesuaikan
